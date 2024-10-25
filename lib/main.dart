@@ -1,7 +1,12 @@
 import 'package:coral_interview_task/view/login_screen/login_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
 
-void main(){
+
+
+Future<void> main() async {
+     WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter(); // Initialize Hive
   runApp(const MyApp());
 }
 class MyApp extends StatelessWidget {

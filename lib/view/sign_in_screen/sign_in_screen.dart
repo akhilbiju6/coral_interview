@@ -13,17 +13,53 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
-  TextEditingController nameController=TextEditingController();
-  TextEditingController emailController=TextEditingController();
-  TextEditingController phoneNumberController=TextEditingController();
-  TextEditingController pincodeController=TextEditingController();
+  TextEditingController nameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController phoneNumberController = TextEditingController();
+  TextEditingController pincodeController = TextEditingController();
+
+ 
+  void handleSignIn() {
+   
+    String name = nameController.text;
+    String email = emailController.text;
+    String phoneNumber = phoneNumberController.text;
+    String pincode = pincodeController.text;
+    print("Name: $name");
+    print("Email: $email");
+    print("Phone Number: $phoneNumber");
+    print("Pincode: $pincode");
+
+
+  if(nameController.text.isNotEmpty&&emailController.text.isNotEmpty){
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => LoginScreen()),
+    );
+  }else{
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text("Name And Email Are Required Parameters!!"),
+            backgroundColor: Colors.red,
+          ),
+        );
+  }
+   
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarWidget(titleText: "Sign-In Page", leadingIcon:Icon(Icons.arrow_back_ios,color: ColorConstants.customWhite,),
-      onTapIcon: () {
-        Navigator.pop(context);
-      },),
+      appBar: AppBarWidget(
+        titleText: "Sign-In Page",
+        leadingIcon: Icon(
+          Icons.arrow_back_ios,
+          color: ColorConstants.customWhite,
+        ),
+        onTapIcon: () {
+          Navigator.pop(context);
+        },
+      ),
       backgroundColor: ColorConstants.backgroundColor,
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -32,29 +68,51 @@ class _SignInScreenState extends State<SignInScreen> {
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: TextFormFieldWidget(controller:nameController, labelText: "Name"),
+              child: TextFormFieldWidget(
+                controller: nameController,
+                labelText: "Name",
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: TextFormFieldWidget(controller:nameController, labelText: "Email"),
+              child: TextFormFieldWidget(
+                controller: emailController,
+                labelText: "Email",
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: TextFormFieldWidget(controller:nameController, labelText: "Phone Number"),
+              child: TextFormFieldWidget(
+                controller: phoneNumberController,
+                labelText: "Phone Number",
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: TextFormFieldWidget(controller:nameController, labelText: "Pincode"),
+              child: TextFormFieldWidget(
+                controller: pincodeController,
+                labelText: "Pincode",
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: CustomButton(text: "Sign-In", onTap:() {
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginScreen()));
-              },),
-            )
+              child: CustomButton(
+                text: "Sign-In",
+                onTap: handleSignIn, 
+              ),
+            ),
           ],
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    nameController.dispose();
+    emailController.dispose();
+    phoneNumberController.dispose();
+    pincodeController.dispose();
+    super.dispose();
   }
 }

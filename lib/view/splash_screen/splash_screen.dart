@@ -1,3 +1,4 @@
+import 'package:coral_interview_task/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -10,6 +11,13 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      backgroundColor: ColorConstants.primaryColor,
+      body:Column(
+        children: [
+
+        ],
+      ) ,
+    );
   }
 }

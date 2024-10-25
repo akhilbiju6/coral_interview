@@ -10,7 +10,7 @@ class Fonts {
 
   static const TextStyle normalText = TextStyle(
     fontWeight: FontWeight.normal,
-    fontSize: 16, 
+    fontSize: 12, 
     color: Colors.black, 
   );
 

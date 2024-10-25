@@ -1,4 +1,3 @@
-
 import 'package:coral_interview_task/utils/colors.dart';
 import 'package:coral_interview_task/utils/fonts.dart';
 import 'package:flutter/material.dart';
@@ -7,12 +6,14 @@ class ContainerWidget extends StatelessWidget {
   final String image;
   final String productName;
   final String mrp;
+  final VoidCallback ontap;
 
   const ContainerWidget({
     super.key,
     required this.image,
     required this.productName,
     required this.mrp,
+    required this.ontap,
   });
 
   @override
@@ -59,9 +60,14 @@ class ContainerWidget extends StatelessWidget {
                     "MRP : $mrp",
                     style: Fonts.boldText2,
                   ),
-                  Icon(
-                    Icons.shopping_bag,
-                    color: ColorConstants.primaryColor,
+                  InkWell(
+                    onTap: () {
+                     ontap();
+                    },
+                    child: Icon(
+                      Icons.shopping_bag,
+                      color: ColorConstants.primaryColor,
+                    ),
                   ),
                 ],
               ),

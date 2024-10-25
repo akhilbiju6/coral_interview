@@ -45,19 +45,30 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-              child: TextFormFieldWidget(controller:emailController, labelText: "Password")
+              child: TextFormFieldWidget(controller:passwordController, labelText: "Password")
             ),
             Padding(
               padding: const EdgeInsets.only(top: 10),
               child: CustomButton(text: "Log-In", onTap:() {
+                 if(emailController.text=="akhilbiju66666@gmail.com"&&passwordController.text=="pa88word"){
                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen(),));
+                   }else{
+                      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text("Invalid email And Password"),
+            backgroundColor: Colors.red,
+          ),
+        );
+                  }
               },),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 10),
               child: InkWell(
                 onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => SignInScreen(),));
+                     Navigator.push(context, MaterialPageRoute(builder: (context) => SignInScreen(),));
+                
+                   
                 },
                 child: RichText(
                   text: TextSpan(
