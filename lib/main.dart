@@ -1,4 +1,5 @@
-import 'package:coral_interview_task/view/login_screen/login_screen.dart';
+
+import 'package:coral_interview_task/view/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      home:SplashScreen(),
     );
   }
 }
