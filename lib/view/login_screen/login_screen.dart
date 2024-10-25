@@ -1,3 +1,4 @@
+import 'package:coral_interview_task/controller/splashscreen_controller/splashscreen_controller.dart';
 import 'package:coral_interview_task/utils/appbar_widget.dart';
 import 'package:coral_interview_task/utils/buttons.dart';
 import 'package:coral_interview_task/utils/colors.dart';
@@ -5,6 +6,8 @@ import 'package:coral_interview_task/utils/textformfield_widgets.dart';
 import 'package:coral_interview_task/view/home_screen/home_screen.dart';
 import 'package:coral_interview_task/view/sign_in_screen/sign_in_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -14,9 +17,17 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+   final controller = Get.put(SplashScreenController());
+    // final Size size = MediaQuery.of(context).size;
 
   TextEditingController emailController=TextEditingController();
   TextEditingController passwordController=TextEditingController();
+
+  @override
+  void initState() {
+   controller.productListfetch();
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

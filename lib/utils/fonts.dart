@@ -19,6 +19,11 @@ class Fonts {
     fontSize: 17, 
     color: ColorConstants.customWhite, 
   );
+  static const TextStyle boldText2 = TextStyle(
+    fontWeight: FontWeight.bold,
+    fontSize: 17, 
+    color: ColorConstants.customBlack, 
+  );
 
   static const TextStyle hintText = TextStyle(
     fontWeight: FontWeight.w400,
