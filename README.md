@@ -1,16 +1,4 @@
-# coral_interview_task
 
-A new Flutter project.
+I have created an  E-commerce application using Flutter and Dart that includes a splash screen, login and signup pages, a home page, and a cart screen. I used GetX for state management and Hive for local storage. I implemented cart functionality and a login feature.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+ I followed the instructions as best as possible, but unfortunately, I was unable to add Firebase Authentication due to time constraints. If allowed additional time, I am confident that I can complete this feature. In the meantime, I have set up a static login with the following credentials:
